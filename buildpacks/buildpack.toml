@@ -1,0 +1,272 @@
+# Copyright 2018-2020 the original author or authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      https://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+api = "0.2"
+
+[buildpack]
+id       = "paketo-buildpacks/java"
+name     = "Paketo Java Buildpack"
+version  = "1.1.0"
+homepage = "https://github.com/srinivasa-vasu/paketo-buildpacks-java"
+
+[[order]]
+[[order.group]]
+id = 'paketo-buildpacks/bellsoft-liberica'
+version = '2.3.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/gradle'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/maven'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/sbt'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/executable-jar'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/apache-tomcat'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/dist-zip'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/procfile'
+optional = true
+version = '1.3.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/azure-application-insights'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/debug'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/google-stackdriver'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/jmx'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/spring-boot'
+optional = true
+version = '1.5.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/encrypt-at-rest'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/image-labels'
+optional = true
+version = '1.0.1'
+
+[stack]
+id = "io.buildpacks.stacks.bionic"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/bellsoft-liberica"
+name    = "Paketo Buildpack BellSoft Liberica JRE"
+version = "2.3.1"
+image   = "gcr.io/paketo-buildpacks/bellsoft-liberica"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/bellsoft-liberica/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/gradle"
+name    = "Paketo Buildpack Gradle Build System"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/gradle"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/gradle/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/maven"
+name    = "Paketo Buildpack Maven Build System"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/maven"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/maven/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/sbt"
+name    = "Paketo Buildpack SBT Build System"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/sbt"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/sbt/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/executable-jar"
+name    = "Paketo Buildpack Executable JAR"
+version = "1.2.1"
+image   = "gcr.io/paketo-buildpacks/executable-jar"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/executable-jar/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/apache-tomcat"
+name    = "Paketo Buildpack Apache Web Container"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/apache-tomcat"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/apache-tomcat/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/dist-zip"
+name    = "Paketo Buildpack Distribution Package"
+version = "1.2.1"
+image   = "gcr.io/paketo-buildpacks/dist-zip"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/dist-zip/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/procfile"
+name    = "Paketo Buildpack Procfile"
+version = "1.3.1"
+image   = "gcr.io/paketo-buildpacks/procfile"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/procfile/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/azure-application-insights"
+name    = "Paketo Buildpack Azure Application Insights"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/azure-application-insights"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/azure-application-insights/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/debug"
+name    = "Paketo Buildpack Debug"
+version = "1.2.1"
+image   = "gcr.io/paketo-buildpacks/debug"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/debug/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/google-stackdriver"
+name    = "Paketo Buildpack Google Stackdriver"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/google-stackdriver"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/google-stackdriver/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/jmx"
+name    = "Paketo Buildpack JMX"
+version = "1.1.1"
+image   = "gcr.io/paketo-buildpacks/jmx"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/jmx/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/spring-boot"
+name    = "Paketo Buildpack Spring Boot"
+version = "1.5.1"
+image   = "gcr.io/paketo-buildpacks/spring-boot"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/spring-boot/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/encrypt-at-rest"
+name    = "Paketo Buildpack Encrypt"
+version = "1.2.1"
+image   = "gcr.io/paketo-buildpacks/encrypt-at-rest"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/encrypt-at-rest/blob/master/LICENSE"
+
+[[metadata.dependencies]]
+id      = "paketo-buildpacks/image-labels"
+name    = "Paketo Buildpack Image Labels"
+version = "1.0.1"
+image   = "gcr.io/paketo-buildpacks/image-labels"
+stacks  = [ "io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3" ]
+
+  [[metadata.dependencies.licenses]]
+  type = "Apache-2.0"
+  uri  = "https://github.com/paketo-buildpacks/image-labels/blob/master/LICENSE"
+
+[metadata]
+include-files = [
+  "LICENSE",
+  "NOTICE",
+  "README.md",
+  "buildpack.toml"
+]
