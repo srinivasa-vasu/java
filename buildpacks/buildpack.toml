@@ -20,9 +20,11 @@ name     = "Paketo Java Buildpack"
 version  = "1.1.0"
 homepage = "https://github.com/srinivasa-vasu/paketo-buildpacks-java"
 
+# 1
 [[order]]
 [[order.group]]
 id = 'paketo-buildpacks/bellsoft-liberica'
+optional = true
 version = '2.3.1'
 
 [[order.group]]
@@ -94,6 +96,38 @@ version = '1.2.1'
 id = 'paketo-buildpacks/image-labels'
 optional = true
 version = '1.0.1'
+
+# 2
+[[order]]
+[[order.group]]
+id = 'paketo-buildpacks/bellsoft-liberica'
+optional = true
+version = '2.3.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/maven'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/executable-jar'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/apache-tomcat'
+optional = true
+version = '1.1.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/dist-zip'
+optional = true
+version = '1.2.1'
+
+[[order.group]]
+id = 'paketo-buildpacks/spring-boot'
+optional = true
+version = '1.5.1'
 
 [stack]
 id = "io.buildpacks.stacks.bionic"
